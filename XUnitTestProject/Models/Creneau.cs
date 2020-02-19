@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DDDtp1
+namespace XUnitTestProject.Models
 {
-    class Creneau
+    public class Creneau
     {
         private DateTime date;
 
@@ -40,6 +40,10 @@ namespace DDDtp1
         {
             if (duree <= 0)
                 throw new ArgumentException("can't go back in time or have a instant meeting");
+
+            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                throw new ArgumentException("we're closed on weekends");
+
             this.date = date;
             this.start = date;
             this.end = date.AddHours(duree);

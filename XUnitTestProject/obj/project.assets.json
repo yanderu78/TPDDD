@@ -5848,11 +5848,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yanderu\\source\\repos\\DDDtp1\\XUnitTestProject\\XUnitTestProject.csproj",
+      "projectUniqueName": "C:\\Users\\Yanderu\\source\\repos\\DDDtp1\\TPDDD\\XUnitTestProject\\XUnitTestProject.csproj",
       "projectName": "XUnitTestProject",
-      "projectPath": "C:\\Users\\Yanderu\\source\\repos\\DDDtp1\\XUnitTestProject\\XUnitTestProject.csproj",
+      "projectPath": "C:\\Users\\Yanderu\\source\\repos\\DDDtp1\\TPDDD\\XUnitTestProject\\XUnitTestProject.csproj",
       "packagesPath": "C:\\Users\\Yanderu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yanderu\\source\\repos\\DDDtp1\\XUnitTestProject\\obj\\",
+      "outputPath": "C:\\Users\\Yanderu\\source\\repos\\DDDtp1\\TPDDD\\XUnitTestProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

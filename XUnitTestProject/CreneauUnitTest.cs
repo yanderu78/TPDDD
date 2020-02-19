@@ -1,6 +1,6 @@
-using DDDtp1;
 using System;
 using Xunit;
+using XUnitTestProject.Models;
 
 namespace XUnitTestProject
 {
@@ -99,9 +99,17 @@ namespace XUnitTestProject
         {
             string dateInput = "Jan 1, 2009";
             var parsedDate = DateTime.Parse(dateInput);
-            Creneau Crn = new Creneau(parsedDate, 10);
 
             Assert.Throws<ArgumentException>(() => new Creneau(parsedDate, -10));
+        }
+
+        [Fact]
+        public void TestWeekend()
+        {
+            string dateInput = "Jan 5, 2020";
+            var parsedDate = DateTime.Parse(dateInput);
+
+            Assert.Throws<ArgumentException>(() => new Creneau(parsedDate, 10));
         }
     }
 }
