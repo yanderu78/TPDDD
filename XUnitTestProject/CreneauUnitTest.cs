@@ -12,7 +12,8 @@ namespace XUnitTestProject
         {
             string dateInput = "Jan 1, 2009";
             DateTime parsedDate = DateTime.Parse(dateInput);
-            crn = new Creneau(parsedDate, 3);
+            var etr = new Entretien(parsedDate, 3, "jean Bono", "Java", 4, "jean Recru", "Java - Spring");
+            crn = etr.Creneau;
         }
 
         [Fact]
