@@ -12,7 +12,7 @@ namespace XUnitTestProject
         {
             string dateInput = "Jan 1, 2009";
             DateTime parsedDate = DateTime.Parse(dateInput);
-            var etr = new Entretien(parsedDate, 3, "jean Bono", "Java", 4, "jean Recru", "Java - Spring");
+            var etr = new Entretien(parsedDate, 3, "jean Bono", "Java", 4);
             crn = etr.Creneau;
         }
 
