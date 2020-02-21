@@ -10,9 +10,7 @@ namespace XUnitTestProject
 
         public EntretienUnitTest()
         {
-            string dateInput = "Jan 1, 2009";
-            DateTime parsedDate = DateTime.Parse(dateInput);
-            etr = new Entretien(parsedDate, 3, "jean Bono", "Java", 4);
+            etr = new Entretien(DateTime.Parse("Jan 1, 2019"), 3, "jean Bono", "Java", 4);
         }       
 
         [Fact]
@@ -38,9 +36,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestUniqueGuid()
         {
-            string dateInput = "Jan 1, 2009";
-            DateTime parsedDate = DateTime.Parse(dateInput);
-            var Etr = new Entretien(parsedDate, 3, "jean Bono", "Java", 4);
+            var Etr = new Entretien(DateTime.Parse("Jan 1, 2019"), 3, "jean Bono", "Java", 4);
             Assert.NotEqual(etr.guID, Etr.guID);
         }
     }

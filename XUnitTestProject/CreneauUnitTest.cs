@@ -10,18 +10,14 @@ namespace XUnitTestProject
 
         public CreneauUnitTest()
         {
-            string dateInput = "Jan 1, 2009";
-            DateTime parsedDate = DateTime.Parse(dateInput);
-            var etr = new Entretien(parsedDate, 3, "jean Bono", "Java", 4);
+            var etr = new Entretien(DateTime.Parse("Jan 1, 2019"), 3, "jean Bono", "Java", 4);
             crn = etr.Creneau;
         }
 
         [Fact]
         public void TestWrongDate()
         {
-            string dateInput = "Jan 2, 2009";
-            DateTime parsedDate = DateTime.Parse(dateInput);
-            Creneau Crn = new Creneau(parsedDate, 3);
+            Creneau Crn = new Creneau(DateTime.Parse("Jan 2, 2019"), 3);
 
             var result = crn.Equals(Crn);
 
@@ -31,9 +27,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestWrongDuration()
         {
-            string dateInput = "Jan 1, 2009";
-            DateTime parsedDate = DateTime.Parse(dateInput);
-            Creneau Crn = new Creneau(parsedDate, 1);
+            Creneau Crn = new Creneau(DateTime.Parse("Jan 1, 2019"), 1);
 
             var result = (crn == Crn);
 
@@ -43,9 +37,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestIdentical()
         {
-            string dateInput = "Jan 1, 2009";
-            DateTime parsedDate = DateTime.Parse(dateInput);
-            Creneau Crn = new Creneau(parsedDate, 3);
+            Creneau Crn = new Creneau(DateTime.Parse("Jan 1, 2019"), 3);
 
             var result = crn.Equals(Crn);
 
@@ -55,9 +47,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestHashcodeTrue()
         {
-            string dateInput = "Jan 1, 2009";
-            DateTime parsedDate = DateTime.Parse(dateInput);
-            Creneau Crn = new Creneau(parsedDate, 3);
+            Creneau Crn = new Creneau(DateTime.Parse("Jan 1, 2019"), 3);
 
             Assert.Equal(crn.GetHashCode(), Crn.GetHashCode());
         }
@@ -65,9 +55,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestHashcodeFalse()
         {
-            string dateInput = "Jan 1, 2009";
-            DateTime parsedDate = DateTime.Parse(dateInput);
-            Creneau Crn = new Creneau(parsedDate, 1);
+            Creneau Crn = new Creneau(DateTime.Parse("Jan 1, 2019"), 1);
 
             Assert.NotEqual(crn.GetHashCode(), Crn.GetHashCode());
         }
@@ -75,10 +63,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestWrongObject()
         {
-            string dateInput = "Jan 1, 2009";
-            var parsedDate = DateTime.Parse(dateInput);
-
-            var result = crn.Equals(parsedDate);
+            var result = crn.Equals(DateTime.Parse("Jan 1, 2019"));
 
             Assert.False(result, "Is False");
         }
@@ -86,9 +71,7 @@ namespace XUnitTestProject
         [Fact]
         public void TestDifferent()
         {
-            string dateInput = "Jan 1, 2009";
-            var parsedDate = DateTime.Parse(dateInput);
-            Creneau Crn = new Creneau(parsedDate, 10);
+            Creneau Crn = new Creneau(DateTime.Parse("Jan 1, 2019"), 10);
 
             var result = crn != Crn;
 
@@ -98,19 +81,13 @@ namespace XUnitTestProject
         [Fact]
         public void TestNegatifDuration()
         {
-            string dateInput = "Jan 1, 2009";
-            var parsedDate = DateTime.Parse(dateInput);
-
-            Assert.Throws<ArgumentException>(() => new Creneau(parsedDate, -10));
+            Assert.Throws<ArgumentException>(() => new Creneau(DateTime.Parse("Jan 1, 2019"), -10));
         }
 
         [Fact]
         public void TestWeekend()
         {
-            string dateInput = "Jan 5, 2020";
-            var parsedDate = DateTime.Parse(dateInput);
-
-            Assert.Throws<ArgumentException>(() => new Creneau(parsedDate, 10));
+            Assert.Throws<ArgumentException>(() => new Creneau(DateTime.Parse("Jan 5, 2020"), 10));
         }
     }
 }

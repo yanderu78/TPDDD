@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using XUnitTestProject.Common.DTO;
+using XUnitTestProject.infrastructure;
 
 namespace XUnitTestProject.Models
 {
@@ -41,6 +44,25 @@ namespace XUnitTestProject.Models
             localisation = loc;
             capacite = cap;
             disponibilite = disp;
+        }
+
+        public Salle(DateTime dt)
+        {
+            List<SalleDTO> lstRo = AccessDB.AllRooms;
+            SalleDTO dto = lstRo.FirstOrDefault(x => x.Disponibilite == dt);
+            if (dto == null)
+                throw new Exception("Aucune salle disponible pour l'entretien");
+
+            localisation = dto.Localisation;
+            capacite = dto.Capacite;
+            disponibilite = dto.Disponibilite;
+        }
+
+        public Salle(SalleDTO dto)
+        {
+            localisation = dto.Localisation;
+            capacite = dto.Capacite;
+            disponibilite = dto.Disponibilite;
         }
     }
 }

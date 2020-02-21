@@ -95,15 +95,17 @@ namespace XUnitTestProject.Models
         {
             this.creneau = new Creneau(date, duree);
             this.candidat = new Candidat(nomCand, specialiteCand, experiance);
+            this.recruteur = new Recruteur(specialiteCand, date, experiance);
+            this.salle = new Salle(date);
             statut = Statut.Planifie;
             guid = Guid.NewGuid();
         }
 
         // Methods
 
-        public void AjouterRecruteur(string nom, string spec, DateTime disp)
+        public void AjouterRecruteur(Recruteur rec)
         {
-            this.recruteur = new Recruteur(nom, spec, disp);
+            this.recruteur = rec;
         }
 
         public void AjouterRoom(Salle salle)
